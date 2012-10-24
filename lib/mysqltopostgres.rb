@@ -51,7 +51,7 @@ class Mysql2psql
         
     filename = File.expand_path( File.join( path, tag + '_output.sql'))
 
-    @writer = PostgresDbWriter.new(filename, options)
+    @writer = PostgresFileWriter.new(filename)
 
     Converter.new(reader, writer, options).convert
     
